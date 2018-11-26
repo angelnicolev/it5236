@@ -28,10 +28,11 @@ $errors = array();
 	<?php include 'include/header.php'; ?>
    <div class=container4>
         <img src="https://lyricbham.com/wp-content/uploads/2015/09/lyric-theatre-logo.png" id="logo">
-        <p style="text-align: center">
-            Your go-to for the lyrics of your favorite songs! The best part is the many ways you can interect with them.
-        </p>
+        <p style="text-align: center" id="slogan">
+            Your go-to place for sharing lyrics of your favorite songs! 
+        </p> <img src="https://us.123rf.com/450wm/alterphoto/alterphoto1608/alterphoto160800085/62220773-happy-relaxed-girl-listening-music-using-headphones-and-smartphone-lying-on-bed-at-home-people-leisu.jpg?ver=6" class="center"></br>
             <div id="buttons">
+                  
                 <button class="button button1"><a href="register.php">create an account!</a></button>
                 <button class="button button1"><a href="login.php">login!</a></button>
             </div>

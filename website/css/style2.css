@@ -3,8 +3,8 @@ html {
 }
 
 body{
- background-color: lightblue;
-    color: black;
+
+    color: white;
     font-family: 'Niramit', sans-serif;
     
     height: 100%;
@@ -15,23 +15,22 @@ body{
 #logo{
     height: 260px;
     display: block;
-    margin-left: 30%;
-    /*margin-right: 40%;*/
-    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
-.button {
-    background-color: white;
-    border: none;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    border-radius: 12px;
+.button1 {
+    background-color: yellow; 
+    color: black; 
+    border: 2px solid yellow;
+    display: block; 
+    margin: 0 auto;
 }
 
+.button1:hover {
+    background-color: yellow;
+    color: white;
+}
 .navitem{
     text-decoration: none;
     color: white;
@@ -41,21 +40,5 @@ container4{
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-}
-
-#slogan{
-    font-size: 20pt;
-}
-#buttons{
-     display: block;
-    margin-left: 42%;
-    /*margin-right: 20%;*/
-}
-
-.center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
 }
 
