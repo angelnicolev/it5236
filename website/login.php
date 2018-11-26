@@ -63,6 +63,8 @@ if (isset($_GET['register']) && $_GET['register']== 'success') {
 	<meta name="description" content="Russell Thackston's personal website for IT 5233">
 	<meta name="author" content="Russell Thackston">
 	<link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -79,7 +81,7 @@ if (isset($_GET['register']) && $_GET['register']== 'success') {
 	<div>
 		<form method="post" action="login.php">
 			
-			<input type="text" name="username" id="username" placeholder="Username" value="<?php echo $username; ?>" />
+			<input type="text" name="username" id="username" onclick ="doPageLoad()" placeholder="Username" value="<?php echo $username; ?>" />
 			<br/>
 
 			<input type="password" name="password" id="password" placeholder="Password" value="<?php echo $password; ?>" />
@@ -87,11 +89,15 @@ if (isset($_GET['register']) && $_GET['register']== 'success') {
 
 			<input type="submit" value="Login" name="login" />
 		</form>
+        
+        <input type="checkbox" id="saveLocal" onclick="doSubmit()">Remember Username?</input>
+    
 	</div>
 	<a href="register.php">Need to create an account?</a>
 	<br/>
 	<a href="reset.php">Forgot your password?</a>
 	<?php include 'include/footer.php'; ?>
 	<script src="js/site.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>

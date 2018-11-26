@@ -16,20 +16,26 @@ $errors = array();
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Nicole's Discussion Site</title>
+	<title>Lyric!</title>
 	<meta name="description" content="Russell Thackston's personal website for IT 5236">
 	<meta name="author" content="Russell Thackston">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 	<?php include 'include/header.php'; ?>
-	<h2>Mobile Web Infrastructure</h2>
-	<p>
-		This is a bare-bones "list-oriented" web application for use in IT 5236, to teach mobile web infrastructure concepts.
-		Students currently registered for the course may <a href="login.php">create an account</a> or proceed directly to the 
-		<a href="login.php">login page</a>.
-	</p>
+   <div class=container4>
+        <img src="https://lyricbham.com/wp-content/uploads/2015/09/lyric-theatre-logo.png" id="logo">
+        <p style="text-align: center">
+            Your go-to for the lyrics of your favorite songs! The best part is the many ways you can interect with them.
+        </p>
+            <div id="buttons">
+                <button class="button button1"><a href="register.php">create an account!</a></button>
+                <button class="button button1"><a href="login.php">login!</a></button>
+            </div>
+    </div>
 	<?php include 'include/footer.php'; ?>
 	<script src="js/site.js"></script>
 </body>

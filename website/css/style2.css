@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+
+body{
+
+    color: white;
+    font-family: 'Niramit', sans-serif;
+    
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#logo{
+    height: 260px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.button1 {
+    background-color: yellow; 
+    color: black; 
+    border: 2px solid yellow;
+    display: block; 
+    margin: 0 auto;
+}
+
+.button1:hover {
+    background-color: yellow;
+    color: white;
+}
+.navitem{
+    text-decoration: none;
+    color: white;
+}
+container4{
+     display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
