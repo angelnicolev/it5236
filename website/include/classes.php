@@ -285,7 +285,91 @@ class Application {
         $dbh = NULL;
         
     }
-    
+    /* sendValidationEmail with Curl below
+    protected function sendValidationEmail($userid, $email, &$errors) {
+        
+        // Connect to the database
+        $dbh = $this->getConnection();
+        
+        $this->auditlog("sendValidationEmail", "Sending message to $email");
+        
+        $validationid = bin2hex(random_bytes(16));
+        
+        //start copying here
+			$url = "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/registeruser";
+			$data = array(
+				'userid'=>$userid,
+				'username'=>$username,
+				'passwordHash'=>$passwordhash,
+				'email'=>$email,
+				'registrationcode'=>$registrationcode
+			);
+			$data_json = json_encode($data);
+
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','x-api-key: KL4eLQtoRv9fwfCoqfCvF1dUuMDjeqAa49ssyRHK','Content-Length: ' . strlen($data_json)));
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response  = curl_exec($ch);
+			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+			if ($response === FALSE) {
+				$errors[] = "An unexpected failure occurred contacting the web service.";
+			} else {
+
+				if($httpCode == 400) {
+					
+					// JSON was double-encoded, so it needs to be double decoded
+					$errorsList = json_decode(json_decode($response))->errors;
+					foreach ($errorsList as $err) {
+						$errors[] = $err;
+					}
+					if (sizeof($errors) == 0) {
+						$errors[] = "Bad input";
+					}
+
+				} else if($httpCode == 500) {
+
+					$errorsList = json_decode(json_decode($response))->errors;
+					foreach ($errorsList as $err) {
+						$errors[] = $err;
+					}
+					if (sizeof($errors) == 0) {
+						$errors[] = "Server error";
+					}
+
+				} else if($httpCode == 200) {
+            
+                    // Send reset email
+                    $pageLink = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                    $pageLink = str_replace("register.php", "login.php", $pageLink);
+                    $to      = $email;
+                    $subject = 'Confirm your email address';
+                    $message = "A request has been made to create an account at https://russellthackston.me for this email address. ".
+                        "If you did not make this request, please ignore this message. No other action is necessary. ".
+                        "To confirm this address, please click the following link: $pageLink?id=$validationid";
+                    $headers = 'From: webmaster@russellthackston.me' . "\r\n" .
+                        'Reply-To: webmaster@russellthackston.me' . "\r\n";
+
+                    mail($to, $subject, $message, $headers);
+
+                    $this->auditlog("sendValidationEmail", "Message sent to $email");
+
+				}
+
+			}
+      
+         
+            
+        }
+        
+        // Close the connection
+       curl_close($ch);
+        
+    }
+    */
     // Send an email to validate the address
     public function processEmailValidation($validationid, &$errors) {
         
