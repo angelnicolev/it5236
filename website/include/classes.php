@@ -1472,6 +1472,90 @@ class Application {
         }
     }
     
+     /* AddThing with Curl
+    public function addThing($name, $attachment, &$errors) {
+        
+        // Get the user id from the session
+        $user = $this->getSessionUser($errors);
+        $userid = $user["userid"];
+        $registrationcode = $user["registrationcode"];
+        
+        // Validate the user input
+        if (empty($userid)) {
+            $errors[] = "Missing user ID. Not logged in?";
+        }
+        if (empty($name)) {
+            $errors[] = "Missing thing name";
+        }
+        
+        // Only try to insert the data into the database if there are no validation errors
+        if (sizeof($errors) == 0) {
+            
+            // Connect to the database
+            
+            $attachmentid = $this->saveAttachment($ch, $attachment, $errors);
+            
+            // Only try to insert the data into the database if the attachment successfully saved
+            if (sizeof($errors) == 0) {
+                
+                $url = "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/addThing";
+			$data = array(
+				'name'=>$attachmentid,
+				'attachmentid'=>$attachmentid
+			);
+			$data_json = json_encode($data);
+                
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','x-api-key: KL4eLQtoRv9fwfCoqfCvF1dUuMDjeqAa49ssyRHK','Content-Length: ' . strlen($data_json)));
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response  = curl_exec($ch);
+			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+			if ($response === FALSE) {
+				$errors[] = "An unexpected failure occurred contacting the web service.";
+			} else {
+
+				if($httpCode == 400) {
+					
+					// JSON was double-encoded, so it needs to be double decoded
+					$errorsList = json_decode(json_decode($response))->errors;
+					foreach ($errorsList as $err) {
+						$errors[] = $err;
+					}
+					if (sizeof($errors) == 0) {
+						$errors[] = "Bad input";
+					}
+
+				} else if($httpCode == 500) {
+
+					$errorsList = json_decode(json_decode($response))->errors;
+					foreach ($errorsList as $err) {
+						$errors[] = $err;
+					}
+					if (sizeof($errors) == 0) {
+						$errors[] = "Server error";
+					}
+
+				} else if($httpCode == 200) {
+
+					$this->sendValidationEmail($userid, $email, $errors);
+
+				}
+
+			}
+			
+			
+
+                
+            }
+            
+      curl_close($ch);
+            
+        }
+    }*/
     // Adds a new comment to the database
     public function addComment($text, $thingid, $attachment, &$errors) {
         
@@ -1544,6 +1628,85 @@ class Application {
         }
     }
     
+    /*addComment with Curl
+     public function addComment($text, $thingid, $attachment, &$errors) {
+        
+        // Get the user id from the session
+        $user = $this->getSessionUser($errors);
+        $userid = $user["userid"];
+        
+        // Validate the user input
+        if (empty($userid)) {
+            $errors[] = "Missing user ID. Not logged in?";
+        }
+        if (empty($thingid)) {
+            $errors[] = "Missing thing ID";
+        }
+        if (empty($text)) {
+            $errors[] = "Missing comment text";
+        }
+        
+        // Only try to insert the data into the database if there are no validation errors
+        if (sizeof($errors) == 0) {
+            
+            // Connect to the database
+            $url = "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/addComment";
+			$data = array(
+				'userid'=>$userid,
+				'username'=>$username,
+				'passwordHash'=>$passwordhash,
+				'email'=>$email,
+				'registrationcode'=>$registrationcode
+			);
+			$data_json = json_encode($data);
+
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json','x-api-key: QRaERdJeeY5tM1JkBrYWt3RQfvddKJnc2rGEED2Z','Content-Length: ' . strlen($data_json)));
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data_json);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response  = curl_exec($ch);
+			$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+			if ($response === FALSE) {
+				$errors[] = "An unexpected failure occurred contacting the web service.";
+			} else {
+
+				if($httpCode == 400) {
+					
+					// JSON was double-encoded, so it needs to be double decoded
+					$errorsList = json_decode(json_decode($response))->errors;
+					foreach ($errorsList as $err) {
+						$errors[] = $err;
+					}
+					if (sizeof($errors) == 0) {
+						$errors[] = "Bad input";
+					}
+
+				} else if($httpCode == 500) {
+
+					$errorsList = json_decode(json_decode($response))->errors;
+					foreach ($errorsList as $err) {
+						$errors[] = $err;
+					}
+					if (sizeof($errors) == 0) {
+						$errors[] = "Server error";
+					}
+
+				} else if($httpCode == 200) {
+
+					$this->auditlog("addcomment", "success: $commentid");
+
+				}
+
+			}
+			
+			curl_close($ch);
+
+
+            }
+    }*/
     // Get a list of users from the database and will return the $errors array listing any errors encountered
     public function getUsers(&$errors) {
         
