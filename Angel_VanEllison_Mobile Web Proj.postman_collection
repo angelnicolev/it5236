@@ -1,0 +1,885 @@
+{
+	"info": {
+		"_postman_id": "037ee394-bb4f-4801-bd45-58f916c9a647",
+		"name": "Mobile Web Proj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auditlog",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "JtIkImUBOb4M1mld2RxBnOIywwy84z57CsxkkTp4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"context\": \"random\",\n  \"message\": \"testing\",\n  \"logdate\": \"2018-10-23 00:39:59\",\n  \"ipaddress\": \"54654\",\n  \"userid\": \"13285641\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/AuditLog",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"AuditLog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "kG0ZxhURTO6AsSAwYpy9g9RReQzXgKWA1Wt9t1Lg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"bianca\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/login",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewSession",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "zejjCodnVa5UZ8z1hKy8J57kEAU7yZ61ppfX1krd",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"usersessionid\": \"123\",\n  \"userid\": \"e16e031869225c956b1d6352a84b20f6\",\n  \"registrationcode\": \"it5236\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/NewSession",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"NewSession"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "uI1wMmYMrA6Dq05g1pIxh1GslXkrzyp07CnUOp25",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userid\": \"cakeslicetest\",\n  \"username\": \"cakeslicetest\",\n  \"passwordHash\": \"fakepass513!\",\n  \"email\": \"cakslice32@georgiasouthern.edu\",\n  \"registrationcode\": \"it5236\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/registeruser",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"registeruser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SaveAttachment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "ZwEt9oSioL8CHLIcizxXu5LwCVT3aym82nJASk16",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"attachmentid\": \"1234\",\n  \"filename\": \"yellow.png\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/saveAttachment",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"saveAttachment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "C7orDkATp85FDxg3RsP8c272m7U4guAO9RBZddwS",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"userid\": \"e16e031869225c956b1d6352a84b20f6\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/admin",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "NewAttachmentType",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "yq614pdRdr9uZaDWvQWLb9HwnVlYlJBR4H4nopEU",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"attachmenttypeid\": \"123\",\n  \"name\": \"MOP\",\n  \"extension\": \".mop\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/newAttachmentType",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"newAttachmentType"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddThing",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "tlLqXWyV3Y8X3t0Tt0Li63Nto95Qw5BQVc4cfdf1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/addThing",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"addThing"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddComment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "QRaERdJeeY5tM1JkBrYWt3RQfvddKJnc2rGEED2Z",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"commentid\": \"12348\",\n  \"commenttext\": \"test\",\n  \"commentposted\": \"value3\",\n  \"commentuserid\": \"e16e031869225c956b1d6352a84b20f6\",\n  \"commentthingid\": \"0552beb6e91f037e11e3de03aa2774ab\",\n  \"commentattachmentid\": null\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/addComment",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"addComment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Password Reset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "AfzUSsRSdN36JPmzJ0aaZ7sUeEhJT4fD7tHivrKv"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"passwordresetid\": \"123\",\n  \"userid\": \"cakeslicetest\",\n  \"email\": \"cakslice11322@georgiasouthern.edu\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/passwordreset",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"passwordreset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SendValidationEmail",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "IozFQGSqvJ8ZOU8GOxve92P0hPwmCYrS2QBIApvI"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"emailvalidationid\": \"152345\",\n  \"userid\": \"cakeslicetest\",\n  \"email\": \"as4d@georgiasouthern.edu\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/sendValidationEmail",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"sendValidationEmail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetSessionUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "Wihs1wS2SS7FPev3el2zk5pIDMBg1GiwDnglyxYa"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getSessionUser?usersessionid=123",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getSessionUser"
+					],
+					"query": [
+						{
+							"key": "usersessionid",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUsers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "Wihs1wS2SS7FPev3el2zk5pIDMBg1GiwDnglyxYa"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getUsers",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Second GetThing",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "Wihs1wS2SS7FPev3el2zk5pIDMBg1GiwDnglyxYa"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getUsers",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "ur1Kc6DjVk6p0ERuzkEkqa0ta4UQj5AFEuYsl9Of",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getUser?userid=e16e031869225c956b1d6352a84b20f6",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getUser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "e16e031869225c956b1d6352a84b20f6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetThings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "cqQXkjHKBu1widYkgDP9P833d9zJo1Rl9ZN5A8mQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getThings?thingregistrationcode=it5236",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getThings"
+					],
+					"query": [
+						{
+							"key": "thingregistrationcode",
+							"value": "it5236"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetThing Not Done",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "dTySzQs8ZU7HvPvmWyuIJ3CtjtQ3nHTs2NC0ogrT"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getThing?thingid=0552beb6e91f037e11e3de03aa2774ab",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getThing"
+					],
+					"query": [
+						{
+							"key": "thingid",
+							"value": "0552beb6e91f037e11e3de03aa2774ab"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserRegistrations",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "R9omOrofOv7KvhpgdWV6e6AlSBQozOP82qCodvIY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getUserRegistration?userid=e16e031869225c956b1d6352a84b20f6",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getUserRegistration"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "e16e031869225c956b1d6352a84b20f6"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAttachmentTypes",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "pdetVm0eIbvJwCJuJVf3anXEruvTp71itUbPy600"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"thingid\": \"value1\",\n  \"thingname\": \"value2\",\n  \"thingcreated\": \"value3\",\n  \"thinguserid\": \"value3\",\n  \"thingattachmentid\": \"value3\",\n  \"thingregistrationcode\": \"value3\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/getUserRegistration?attachmenttypeid=1a4a32c2ea1780c455f0c5c9e1f9d0fb",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"getUserRegistration"
+					],
+					"query": [
+						{
+							"key": "attachmenttypeid",
+							"value": "1a4a32c2ea1780c455f0c5c9e1f9d0fb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "lLdz12z9U09Dh34W4GERO1xRIkLP5wk93TzSF1Ro"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"username\": \"cakeslicetest\",\n  \"email\": \"cakslice11322@georgiasouthern.edu\",\n  \"isadmin\": \"0\",\n  \"passwordhash\" : \"fakepass513!\",\n  \"userid\" : \"cakeslicetest\"\n}\n"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/updateUser",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"updateUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ProcessEmailValidation ",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "CSKoYD3pyI2Mcks43sAkc9PFhcAxFnJ039vNAPLO"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"emailvalidationid\": \"123\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/processEmailValidation",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"processEmailValidation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdatePassword",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "8AjzXwHzTz3Ma4qdTTlmC1NPaRa2Fxx59JNg6V76"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"passwordresetid\": \"123\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/updatePassword",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateUserPassword",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "8AjzXwHzTz3Ma4qdTTlmC1NPaRa2Fxx59JNg6V76"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"passwordresetid\": \"123\"\n}"
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/updatePassword",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"updatePassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "45rkGrZ0Ym4ysbVLGRhIp4fhCBSS2fuMacDo9k6i"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/logout?usersessionid=123",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"logout"
+					],
+					"query": [
+						{
+							"key": "usersessionid",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ClearPasswordResetRecords",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-api-key",
+						"type": "text",
+						"value": "vZ2e1OF7mf3xLqKZyd2KK1gBzI7wRPmS4aZNUCLY"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://dgps15e0gd.execute-api.us-east-1.amazonaws.com/default/clearPasswordResetRecords?passwordresetid=123",
+					"protocol": "https",
+					"host": [
+						"dgps15e0gd",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"default",
+						"clearPasswordResetRecords"
+					],
+					"query": [
+						{
+							"key": "passwordresetid",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
